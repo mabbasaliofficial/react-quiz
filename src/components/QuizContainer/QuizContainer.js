@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
+import {  Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const QuizContainer = ({ quiz }) => {
   const {id, name, logo, total } = quiz;
@@ -12,7 +13,8 @@ const QuizContainer = ({ quiz }) => {
           <Card.Text>
             Total Quiz: {total}
           </Card.Text>
-          <Button className="w-100" variant="primary" href={`/${id}`}>Start Quiz</Button>
+          <Link to={`/quiz/${id}`} className='d-block p-2 text-bg-primary rounded text-decoration-none'>Start Quiz</Link>
+          
         </Card.Body>
       </Card>
     </div>
