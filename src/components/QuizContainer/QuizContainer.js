@@ -1,23 +1,22 @@
-import React from 'react';
-import { Button, Card } from 'react-bootstrap';
+import React from "react";
+import { Button, Card } from "react-bootstrap";
 
-const QuizContainer = ({quiz}) => {
-    const {name, logo, total} = quiz
-    return (
-        <div>
-            <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={logo} />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
-        </div>
-    );
+const QuizContainer = ({ quiz }) => {
+  const { name, logo, total } = quiz;
+  return (
+    <div className='mt-5 mb-5'>
+      <Card style={{ width: "12rem" }} className='mx-1 border border-secondary'>
+        <Card.Img variant="top" src={logo} className='bg-dark'/>
+        <Card.Body className="bg-light">
+          <Card.Title>{name}</Card.Title>
+          <Card.Text>
+            Total Quiz: {total}
+          </Card.Text>
+          <Button variant="primary">Start Quiz</Button>
+        </Card.Body>
+      </Card>
+    </div>
+  );
 };
 
 export default QuizContainer;

@@ -9,12 +9,14 @@ const Home = () => {
   return (
     <div>
       <Header></Header>
+      <div className="d-flex justify-content-center">
       {
         data.map(quiz => <QuizContainer
         key={quiz.id}
         quiz={quiz}
         ></QuizContainer>)
       }
+      </div>
     </div>
   );
 };
