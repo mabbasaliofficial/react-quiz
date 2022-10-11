@@ -1,17 +1,26 @@
 import React from "react";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <div>
-      <div>
-        <h3>Knowledge</h3>
-      </div>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/statistics">Statistics</Link>
-        <Link to="blogs">Blogs</Link>
-      </nav>
+      <Navbar bg="primary">
+        <Container>
+          <h3 className="text-white">Web Learning</h3>
+          <Nav className="ms-auto">
+            <Link to="/" className="text-white mx-1 text-decoration-none">
+              Home
+            </Link>
+            <Link to="/statistics" className="text-white mx-1 text-decoration-none">
+              Statistics
+            </Link>
+            <Link to="/blogs" className="text-white mx-1 text-decoration-none">
+              Blogs
+            </Link>
+          </Nav>
+        </Container>
+      </Navbar>
     </div>
   );
 };
