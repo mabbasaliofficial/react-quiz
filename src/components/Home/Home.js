@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div>
       <Header></Header>
-      <div className="d-lg-flex justify-content-center">
+      <div className="d-lg-flex ms-4 justify-content-center">
       {
         data.map(quiz => <QuizContainer
         key={quiz.id}
