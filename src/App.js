@@ -38,6 +38,10 @@ function App() {
           element: <Quiz></Quiz>
         }
       ]
+    },
+    {
+      path: '*',
+      element: <h3 className='fw-bold'>This page is not found</h3>
     }
   ])
   return (
