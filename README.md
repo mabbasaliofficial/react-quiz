@@ -12,7 +12,7 @@ My Website link is [Web Learning](https://quiz-competition.netlify.app/).
 
 ### About Quiz...
 
--React
--CSS
--Javascript
--Git
+* React
+* CSS
+* Javascript
+* Git
