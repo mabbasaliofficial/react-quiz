@@ -7,7 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 const Question = ({ questions }) => {
   const { question } = questions;
   const options = questions.options;
-  // console.log(questions)
   const correctAnswer = () => {
     toast.success((questions.correctAnswer), {
       position: "top-center",
@@ -19,6 +18,30 @@ const Question = ({ questions }) => {
       progress: undefined,
     });
   };
+  const answer = (option) => {
+    if (option === questions.correctAnswer) {
+      toast.success(('Congratulation! you are right...'), {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+    else{
+      toast.error(('Ohh no! You are wrong...'), {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+  }
   return (
     <div className="border border-info my-lg-5 my-2 p-lg-4 rounded bg-secondary d-flex flex-column align-items-center justify-content-center position-relative">
       <div className="d-flex">
@@ -39,10 +62,9 @@ const Question = ({ questions }) => {
         </div>
       </div>
       {options.map((option) => (
-        <div className="border border-info d-flex align-items-center justify-content-center bg-white p-2 my-2 w-75 rounded">
-          <input className="mx-1" type="radio" name="" id="" />
+        <button id="answer-container" onClick={() => answer(option)} className="border border-info d-flex align-items-center justify-content-center bg-white p-2 my-2 w-75 rounded">
           <span className="fw-bold mx-1">{option}</span>
-        </div>
+        </button>
          
       ))}
    
